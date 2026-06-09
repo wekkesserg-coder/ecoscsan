@@ -1,6 +1,6 @@
 # 🌱 Lomas Recicla - App de Reciclado
 
-Una aplicación móvil que permite escanear productos y determinar si se pueden reciclar, con gestión de productos y su clasificación 
+Una aplicacion movil que permite identificar si un producto o material es reciclabe mediante el escaneo de codigos de barras o codigos QR. La plataforma brinda informacion detallada sobre la clasificacion de  residuos , los materiales que componen cada prodcuto y las recomendaciones para su correcta disposicion y reciclaje. 
 
 ## 📋 Features
 
