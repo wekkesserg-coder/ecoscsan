@@ -1,6 +1,6 @@
-# 🌱 EcoScan - App de Reciclabilidad
+# 🌱 EcoScan - App de Reciclado
 
-Una aplicación móvil que permite escanear productos y determinar si se pueden reciclar, con gestión de productos y su clasificación de reciclabilidad.
+Una aplicación móvil que permite escanear productos y determinar si se pueden reciclar, con gestión de productos y su clasificación 
 
 ## 📋 Features
 
