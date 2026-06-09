@@ -1,4 +1,4 @@
-# 🌱 EcoScan - App de Reciclado
+# 🌱 Lomas Recicla - App de Reciclado
 
 Una aplicación móvil que permite escanear productos y determinar si se pueden reciclar, con gestión de productos y su clasificación 
 
