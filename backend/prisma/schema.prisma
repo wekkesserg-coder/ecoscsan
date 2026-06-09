@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Tabla de productos
+model Product {
+  id              Int       @id @default(autoincrement())
+  barcode         String    @unique
+  name            String
+  description     String?
+  category        String    // "plástico", "vidrio", "papel", "metal", "orgánico", "mixto"
+  recyclable      Boolean   @default(false)
+  recyclingInstructions String?
+  material        String?
+  recycledInto    String?   // En qué se convierte cuando se recicla
+  imageUrl        String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  scans           Scan[]
+
+  @@map("products")
+}
+
+// Tabla de escaneos (historial)
+model Scan {
+  id        Int       @id @default(autoincrement())
+  productId Int
+  product   Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  scannedAt DateTime  @default(now())
+  userAgent String?
+
+  @@map("scans")
+}
+
+// Tabla de categorías
+model Category {
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String?
+  color           String?   // Código hexadecimal para UI
+  recyclable      Boolean   @default(false)
+  recyclingTips   String?
+  commonProducts  String?   // Productos comunes en esta categoría
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("categories")
+}
+
+// Tabla de materiales reciclables y sus destinos
+model RecycledMaterial {
+  id                Int       @id @default(autoincrement())
+  material          String    @unique  // "PET", "HDPE", "Glass", etc.
+  name              String              // "Plástico PET", "Vidrio", etc.
+  description       String?
+  recycledIntoProducts String?  // JSON con array de productos finales
+  percentageRecycled Float?             // Porcentaje que se recicla realmente
+  commonUses        String?             // Usos comunes del material reciclado
+  environmentalImpact String?           // Impacto ambiental de reciclar vs no reciclar
+  color             String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@map("recycled_materials")
+}

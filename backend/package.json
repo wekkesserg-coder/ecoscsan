@@ -1,0 +1,27 @@
+{
+  "name": "ecoscsan-backend",
+  "version": "1.0.0",
+  "description": "Backend API para EcoScan",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": ["recycling", "api", "express"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0",
+    "nodemon": "^3.0.2"
+  }
+}

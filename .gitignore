@@ -1,0 +1,30 @@
+# Database
+backend/node_modules/
+backend/.env
+backend/.env.local
+backend/dist/
+backend/.DS_Store
+backend/logs/
+
+# Mobile
+mobile/node_modules/
+mobile/.expo/
+mobile/.expo-shared/
+mobile/dist/
+mobile/.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
